@@ -1,9 +1,49 @@
 *,*::after,*::before{
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 body{
   margin: 0;
-  background-image: linear-gradient(rgba(255,255,255,.2), rgba(255,255,255,0.7)),url('https://www.onlinekaka.com/upload/onlinekaka.com/1609855375-4252349.jpg');
+  background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)),url('https://www.onlinekaka.com/upload/onlinekaka.com/1609855375-4252349.jpg');
+  /* background-repeat: no-repeat; */
+  /* width: 100vw; */
+}
+@media screen and (max-width:660px){
+  body{
+    width: 100%;
+  }
+  .login{
+    display: flex;
+    justify-content: flex-start;
+    /* overflow-x: hidden; */
+    /* width: 100%; */
+  }
+  form p label,input{
+    display: flex;
+    flex-direction: column;
+    /* background-color: #6b1839; */
+    gap: 2rem;
+  }
+  .sign .sm{
+    /* flex-wrap: wrap; */
+    /* display: none; */
+    /* background-color: #6b1839; */
+    font-size: 2.5rem;
+  }
+  .navbar{
+    flex-direction: column;
+    /* width: 100%; */
+    overflow-x: hidden;
+  }
+  .resultLists{
+    /* width: 120%; */
+    min-height: auto;
+    overflow-x: hidden;
+  }
+  .restrauntName_address{
+    height: 5vh;
+  }
+  
 }
 .card{
   display: flex;
@@ -15,6 +55,7 @@ body{
   border: 2px solid rgb(231, 204, 204);
   padding: 2%;
   width: 25rem;
+  background-color: rgb(235, 222, 222);
 }
 .image_cuisine{
   display: flex;
@@ -41,28 +82,44 @@ body{
 }
 ul{
   list-style: none;
+  z-index: 1;
 }
 li{
   margin-top: 2%;
   cursor: pointer;
+  background-color: rgba(128,128,128,0);
+  z-index: 1;
+  position: relative;
 }
 td{
   /* display: flex; */
   /* flex-wrap: wrap; */
 }
 .page{
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-template-rows: auto auto;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  gap: 1rem;
+  flex-wrap: wrap;
 }
-.page_image img{
+.page_image{
   height: 25rem;
-  width: 25rem;
-  border: 1px solid black;
+  position: relative;
+  /* margin-top: 4.1%; */
+  border-radius: 10px;
 }
 .page_show{
   background-color: black;
   color: white;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.opshours{
+  font-size: 2rem;
+  font-weight: bolder;
 }
 .page_rest{
   font-size: larger;
@@ -70,10 +127,33 @@ td{
   flex-direction: column;
   gap: 0.7rem;
   flex:1 0 0;
+  position: absolute;
+  bottom: 4%;
+  padding-left: 2%;
+  flex-wrap: wrap;
 }
 .page_rest .name{
   font-size: 2rem;
   font-weight: bold;
+}
+.reviews_parent{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  /* justify-content: center; */
+  align-items: center;
+  margin-bottom: 4%;
+}
+.reviews{
+  box-shadow: 0 4px 8px rgb(0,0,0,0.5);
+  padding: 2%;
+  border-radius: 15px;
+  width: 90%;
+}
+.reviews .name{
+  font-size: 1.8rem;
+  margin-right: 2%;
 }
 .page_rest .address{
 
@@ -90,6 +170,8 @@ th{
   gap: 2rem;
   align-items: center;
   margin-left: 0;
+  flex-wrap: wrap;
+  /* flex:0 1 0; */
 }
 .textLogin{
   font-size: 1.8rem;
@@ -121,6 +203,7 @@ th{
   box-shadow: 0 4px 8px rgb(0,0,0,0.5);
   gap: 1rem;
   padding: 5%;
+  background-color: rgba(111, 114, 110, 0.5);
 }
 .badcredentials{
   text-align: center;
@@ -156,7 +239,7 @@ form button{
   background-color: none;
   font-size: 1.4rem;
   font-weight: 500;
-  animation: wiggle 2s linear infinite;
+  /* animation: wiggle 2s linear infinite; */
 }
 @keyframes wiggle {
   0%, 7% {
@@ -183,7 +266,7 @@ form button{
 }
 
 form button:hover{
-  background-color: green;
+  background-color: blue;
   color: white;
 }
 .navbar{
@@ -193,9 +276,13 @@ form button:hover{
   color: inherit;
   align-items: stretch;
   gap: 2rem;
+  position: fixed;
+  z-index: 99;
+  width: 100vw;
 }
 .navbar a{
   color: whitesmoke;
+  text-decoration: none;
 }
 .navbar .appName{
   font-size: 2rem;
@@ -416,3 +503,67 @@ form button:hover{
   background-size: 58px 58px;
   background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
 } */
+.searchResult{
+  background-image: url('https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png');
+  background-repeat: 'no-repeat';
+  /* background-position: 'center'; */
+  background-size: 100vw;
+  /* overflow: hidden; */
+  height: 50vh;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  width: 100vw;
+  /* overflow-x: hidden; */
+}
+.searchInput{
+  position: relative;
+  padding: 1%;
+  font-size: 1.7rem;
+  border: none;
+  border-radius: 4px;
+  margin-left: 4%;
+}
+.searchInput:focus{
+  outline: none;
+}
+.resultLists{
+  position: absolute;
+  top: 58%;
+}
+.homesubcard{
+  display: flex;
+  flex-direction: column;
+  width: 12rem;
+  height: 15rem;
+  /* background-color: blue; */
+  align-items: center;
+  padding: 2%;
+  border: 2px solid wheat;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgb(0,0,0,0.5);
+  position: relative;
+  cursor: pointer;
+}
+.cardname{
+  color: rgb(26, 24, 24);
+  /* opacity: 1; */
+  font-size: 1.4rem;
+  font-weight: 800;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 2%;
+  position: absolute;
+  bottom: 4%;
+}
+.print_arr{
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 2% 0 0 2%;
+  padding: 5%;
+}
